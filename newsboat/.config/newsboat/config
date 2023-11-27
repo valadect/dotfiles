@@ -1,0 +1,30 @@
+# general settings
+auto-reload yes
+max-items 50
+refresh-on-startup yes
+text-width 70
+
+# Podcasts
+download-path "~/archives/podcasts/%h/%n"
+
+# unbind keys
+unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+# bind keys - vim style
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+
+#browser
+browser "open -a Safari %u"
+macro m set browser "mpv %u > /dev/null" ; open-in-browser ; set browser "open -a Safari %u"
+
+color listfocus         red color15
+color listfocus_unread  red color15 bold
+color info              white color15
+highlight feedlist ".*(0/0))" color15

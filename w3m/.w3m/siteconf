@@ -1,0 +1,28 @@
+# bbc iplayer open video links with mpv
+url "https://www.bbc.co.uk/iplayer/episode"
+substitute_url "file:/cgi-bin/video.cgi?"
+
+# Tell Google we're actually Lynx. (So they send us a text-browser friendly
+# results page.)
+url m@^https?://(.*\.)google\.com/@
+user_agent "Lynx/2.8.8dev.3 libwww-FM/2.14 SSL-MM/1.4.1"
+
+# Links to wikepedia readable
+url /^http:\/\/[a-z]*\.wikipedia\.org\//
+url_charset utf-8
+
+# Fix reddit
+url m!^https?://(www\.)reddit\.com/!
+substitute_url "https://teddit.pussthecat.org/"
+
+# Fix stackoverflow
+url m!^https?://(www\.)?stackoverflow\.com/!
+substitute_url "https://a.opnxng.com/"
+
+# Fix fandom
+url m!^https?://(www\.)?fandom\.com/!
+substitute_url "https://z.opnxng.com/"
+
+# Fix github
+url m!^https?://(www\.)?github\.com/!
+substitute_url "https://g.opnxng.com/"
